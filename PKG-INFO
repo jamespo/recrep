@@ -1,0 +1,13 @@
+Metadata-Version: .01
+Name: recrep
+Version: 0.1
+Summary: Recursively replace text
+Home-page: https://github.com/jamespo/recrep
+Author: James Powell
+Author-email: james@webscalability.com
+License: MIT
+Description: UNKNOWN
+Keywords: searching,file system,text replacement
+Platform: Cross Platform
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.3.*, <4
