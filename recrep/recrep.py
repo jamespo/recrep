@@ -48,7 +48,8 @@ def mod_files(files, original, replacement):
 
 def format_files(files):
     '''format list of files for printing'''
-    return "\n".join(files)
+    # sort for consistent output
+    return "\n".join(sorted(files))
 
 
 def display_files(files, changed_files, error_files):
@@ -70,8 +71,9 @@ def display_files(files, changed_files, error_files):
 def rec_files(exc_fnmatch, inc_fnmatch, inc_git=False, startdir='.'):
     '''return set of all files under dir, taking filters into account'''
     # os.walk better than glob as includes hidden & normal folders
-    files = [os.path.join(dp, f) for dp, dn, filenames in os.walk(startdir)
-             for f in filenames]
+    # sort to have consistent output
+    files = [os.path.join(dp, f) for dp, dn, filenames
+             in os.walk(startdir) for f in filenames]
     if not inc_git:
         # exclude files under .git directories
         gitdir = os.path.join(".git", "")
